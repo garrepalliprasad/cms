@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Static CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/favicon.ico'%}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <div class="wrapper container">
+        <header >
+            <!-- NavBar -->
+            <nav class="navbar navbar-expand-lg bg-dark p-3 fixed-top" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <div>
+                        <a class="navbar-brand" href="#"><i class="fa-solid fa-graduation-cap" style="color: #f6eef0;"></i> &nbsp; &nbsp;AWDC</a>
+                    </div>
+                    <!-- Sections -->
+                    <div class="ms-auto">
+                        <a class="links" href="#home">Home</a>
+                        <a class="links" href="#about">About</a>
+                        <a class="links"  href="#courses">Courses</a>
+                        <a class="links"  href="#contact">Contact</a>
+                    </div>
+                    <div class="m-2 ms-auto">
+                        <i class="fa-solid fa-mobile-retro fa-shake fa-2xl" style="color: #ff0922;"></i>
+                        <span class="text-light">9989127108</span>
+                    </div>
+                    <!-- Nav Login/Logout -->
+                    {% block loginout %}
+                    <a class="btn btn-outline-success" href="{% url 'login' %}">Login</a>
+                    {% endblock %}
+                </div>
+            </nav>
+            <!-- NavBar End -->
+        </header>
+        <main>
+            {% block content %}main content goes here...{% endblock content %}
+            <!-- include  -->
+            {% include 'components/models/logout.html' %}
+        </main>
+        <footer>
+            <div class="row bg-dark text-light p-3">
+                <div class="col-xl-3 col-sm-12 col-md-6">block</div>
+                <div class="col-xl-3 col-sm-12 col-md-6">block </div>
+                <div class="col-xl-3 col-sm-12 col-md-6">block </div>
+                <div class="col-xl-3 col-sm-12 col-md-6">block </div>                
+            </div>
+        </footer>
+    </div>
+    <!-- Bootstrap5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- Static JS -->
+    <script src="{% static 'js/script.js'%}"></script>
+</body>
+</html>

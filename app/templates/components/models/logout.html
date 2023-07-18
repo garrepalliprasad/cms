@@ -1,0 +1,21 @@
+{% extends 'components/models/base_model.html' %}
+
+<!-- model id  -->
+{% block model-id %} id="logout" {% endblock %}
+
+<!-- model title  -->
+{% block model-title %} 
+<div class="text-danger"><i class="fa-solid fa-power-off"></i> &nbsp; &nbsp; Logout</div>
+{% endblock %}
+
+<!--  -->
+{% block model-body %} 
+<br>
+<div class="text-danger text-center"><i class="fa-solid fa-power-off fa-3x"></i></div>
+<div class="text-danger text-center"> Are you sure to logout???</div>
+{% endblock %}
+
+<!--  -->
+{% block model-footer %} 
+<a href="{% url 'logout' %}" class="btn btn-outline-danger btn-sm">Logout</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Backend {% endblock title %}
+
+<!-- Nav Login/Logout -->
+{% block loginout %}<a class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#logout">Logout</a>{% endblock %}
+
+{% block content %}
+<div class="container mt-3 p-3">
+    <button class="btn btn-warning w-100 no-pointer">
+        <i class="fa fa-tools"></i> &nbsp;&nbsp; Control Panel
+    </button>
+</div>
+<div class="row mt-3 p-3">
+    <!-- include card -->
+    {% include 'components/cards/all_cards.html' %}
+</div>
+{% endblock content %}
+

@@ -1,0 +1,43 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1;
+}
+
+.no-pointer{
+    cursor: default !important;
+}
+
+.links{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+}
+.links:hover{
+    color: greenyellow;
+}
+
+.home{
+    background-color: aquamarine ;
+}
+.about{
+    background-color: cadetblue;
+}
+.courses{
+    background-color: cyan;
+}
+.contact{
+    background-color: blueviolet;
+}
+
+.sections{
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display:flex ;
+    text-decoration: none;
+}
